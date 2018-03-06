@@ -3,7 +3,7 @@ package _075_Sort_Color;
 import java.util.Arrays;
 
 /**
- * LeetCode 75 Sort Color
+ * LeetCode 075. Sort Color
  * <p>
  * 三路快排
  * 对整个数组只遍历了一遍
