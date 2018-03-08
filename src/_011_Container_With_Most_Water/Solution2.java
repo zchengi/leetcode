@@ -29,7 +29,7 @@ public class Solution2 {
                 left++;
             }
             while (left < right && height[right] <= h) {
-                right++;
+                right--;
             }
         }
 
