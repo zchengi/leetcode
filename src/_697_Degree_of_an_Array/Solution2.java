@@ -1,4 +1,4 @@
-package _049_Group_Anagrams._697_Degree_of_an_Array;
+package _697_Degree_of_an_Array;
 
 
 /**
