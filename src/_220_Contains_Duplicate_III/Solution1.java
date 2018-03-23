@@ -1,37 +1,37 @@
 package _220_Contains_Duplicate_III;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.TreeSet;
 
 /**
- * LeetCode 219. Contains Duplicate II
+ * LeetCode 220. Contains Duplicate III
  * <p>
- * 滑动窗口 + 查找表
- * 时间复杂度：O(n)
+ * 这个问题的测试数据在使用 int 进行加减运算的时候会溢出
+ * 所有使用 long
+ * 时间复杂度：O(nlogn)
  * 空间复杂度：O(k)
  *
  * @author cheng
- *         2018/3/23 14:47
+ *         2018/3/23 15:20
  */
 public class Solution1 {
-    public boolean containsNearbyDuplicate(int[] nums, int k) {
+    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
 
-        if (nums == null || nums.length == 0) {
-            return false;
-        }
-        if (k <= 0) {
+        if (t < 0){
             return false;
         }
 
-        Set<Integer> record = new HashSet<>();
+        TreeSet<Long> record = new TreeSet<>();
         for (int i = 0; i < nums.length; i++) {
-            if (record.contains(nums[i])) {
+
+            if (record.ceiling((long) nums[i] - (long) t) != null &&
+                    record.ceiling((long) nums[i] - (long) t) <= (long) nums[i] + (long) t) {
                 return true;
             }
 
-            record.add(nums[i]);
+            record.add((long) nums[i]);
+
             if (record.size() == k + 1) {
-                record.remove(nums[i - k]);
+                record.remove((long) nums[i - k]);
             }
         }
 
@@ -40,8 +40,9 @@ public class Solution1 {
 
     public static void main(String[] args) {
 
-        int[] nums = {1, 2, 1};
-        int k = 1;
-        System.out.println(new Solution1().containsNearbyDuplicate(nums, k));
+        int[] nums = {-2147483648, -2147483647};
+        int k = 3;
+        int t = 3;
+        System.out.println(new Solution1().containsNearbyAlmostDuplicate(nums, k, t));
     }
 }

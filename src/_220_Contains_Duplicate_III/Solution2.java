@@ -1,48 +1,57 @@
 package _220_Contains_Duplicate_III;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * LeetCode 219. Contains Duplicate II
+ * LeetCode 220. Contains Duplicate III
  * <p>
- * 滑动窗口 + 查找表
- * 优化 Solution1
+ * 这个问题的测试数据在使用 int 进行加减运算的时候会溢出
+ * 所有使用 long
  * 时间复杂度：O(n)
  * 空间复杂度：O(k)
  *
  * @author cheng
- *         2018/3/23 15:00
+ *         2018/3/23 15:34
  */
 public class Solution2 {
-    public boolean containsNearbyDuplicate(int[] nums, int k) {
+    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
 
-        if (nums == null || nums.length < 2) {
-            return false;
-        }
-        if (k <= 0) {
+        if (t < 0) {
             return false;
         }
 
-        Set<Integer> record = new HashSet<>();
+        Map<Integer, Integer> bucket = new HashMap<>();
+        int w = t + 1;
         for (int i = 0; i < nums.length; i++) {
-            if (record.contains(nums[i])) {
+            int id = getId(nums[i], w);
+            if (bucket.containsKey(id)) {
+                return true;
+            } else if (bucket.containsKey(id - 1) && Math.abs(bucket.get(id - 1) - nums[i]) < w) {
+                return true;
+            } else if (bucket.containsKey(id + 1) && Math.abs(bucket.get(id + 1) - nums[i]) < w) {
                 return true;
             }
 
-            record.add(nums[i]);
-            if (record.size() > k) {
-                record.remove(nums[i - k]);
+            bucket.put(id, nums[i]);
+            if (i >= k) {
+                bucket.remove(getId(nums[i - k], w));
             }
         }
 
         return false;
     }
 
+    private int getId(int i, int w) {
+        return i < 0 ? (i + 1) / w - 1 : i / w;
+    }
+
+
     public static void main(String[] args) {
 
-        int[] nums = {-1, -1};
-        int k = 1;
-        System.out.println(new Solution2().containsNearbyDuplicate(nums, k));
+        int[] nums = {-2147483648, -2147483647};
+        int k = 3;
+        int t = 3;
+        System.out.println(new Solution2().containsNearbyAlmostDuplicate(nums, k, t));
     }
 }
