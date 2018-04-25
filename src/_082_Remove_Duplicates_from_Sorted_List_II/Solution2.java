@@ -24,6 +24,7 @@ public class Solution2 {
         dummyNode.next = head;
         ListNode pre = dummyNode;
         ListNode cur = head;
+
         // 添加一个标记
         boolean flag = false;
         while (cur != null) {
