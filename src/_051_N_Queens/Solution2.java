@@ -1,4 +1,4 @@
-package _51_N_Queens;
+package _051_N_Queens;
 
 import java.util.ArrayList;
 import java.util.Arrays;
