@@ -1,9 +1,9 @@
-package _20_Valid_Parentheses;
+package _020_Valid_Parentheses;
 
 import java.util.Stack;
 
 /**
- * LeetCode 20 Valid Parentheses
+ * LeetCode 020. Valid Parentheses
  * <p>
  * 另一种实现，不使用额外的 char数组 空间
  *

@@ -1,7 +1,7 @@
-package _20_Valid_Parentheses;
+package _020_Valid_Parentheses;
 
 /**
- * LeetCode 20 Valid Parentheses
+ * LeetCode 020. Valid Parentheses
  * <p>
  * 使用 char数组 实现
  *
