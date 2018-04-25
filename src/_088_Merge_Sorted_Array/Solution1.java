@@ -3,7 +3,7 @@ package _088_Merge_Sorted_Array;
 import java.util.Arrays;
 
 /**
- * Leet Code 088. Merge Sorted Array
+ * LeetCode 088. Merge Sorted Array
  * <p>
  * 归并排序的归并操作
  *
