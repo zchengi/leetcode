@@ -1,9 +1,10 @@
 package _071_Simplify_Path;
 
-/**
- * LeetCode 071. Simplify Path
+/**LeetCode 071. Simplify Path
+ *
  * <p>
- * 采用倒序的方法
+ * 采用从后向前遍历的方式 :)
+ * 很酷的方法
  *
  * @author cheng
  *         2018/4/29 00:28
