@@ -3,7 +3,7 @@ package _126_Word_Ladder_II;
 import java.util.*;
 
 /**
- * LeetCode. 126 Word Ladder II
+ * LeetCode 126. Word Ladder II
  * <p>
  * https://leetcode.com/problems/word-ladder-ii/discuss/40475/My-concise-JAVA-solution-based-on-BFS-and-DFS
  *
