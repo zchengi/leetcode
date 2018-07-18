@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * LeetCode. 127 Word Ladder
+ * LeetCode 127. Word Ladder
  *
  * @author cheng
  *         2018/6/28 14:11
