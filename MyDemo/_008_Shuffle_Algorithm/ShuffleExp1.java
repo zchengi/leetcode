@@ -1,14 +1,16 @@
-package Shuffle_Algorithm;
+package _008_Shuffle_Algorithm;
 
 /**
- * Fisher-Yates-Knuth 洗牌算法
+ * 洗牌算法实验
  * <p>
- * 随机性很强
+ * 第一种：洗牌结果不够乱，得到的结果是有偏的
+ * <p>
+ * 并不能保证等概率的生成结果之一，也就是并不能保证每一个位置最终有雷的概率的一半一半的
  *
  * @author cheng
- *         2018/4/22 13:09
+ *         2018/4/22 12:49
  */
-public class Fisher_Yates_Knuth1 {
+public class ShuffleExp1 {
 
     /**
      * 模拟次数
@@ -23,7 +25,7 @@ public class Fisher_Yates_Knuth1 {
      */
     private int m;
 
-    public Fisher_Yates_Knuth1(int N, int n, int m) {
+    public ShuffleExp1(int N, int n, int m) {
 
         if (N <= 0) {
             throw new IllegalArgumentException("N must be larger than 0!");
@@ -81,8 +83,7 @@ public class Fisher_Yates_Knuth1 {
     private void shuffle(int[] arr) {
 
         for (int i = 0; i < n; i++) {
-            // 从 [i, n) 区间里随机选择元素
-            int x = (int) (Math.random() * (n - i)) + i;
+            int x = (int) (Math.random() * n);
             swap(arr, i, x);
         }
     }
@@ -99,8 +100,7 @@ public class Fisher_Yates_Knuth1 {
         int n = 10;
         int m = 5;
 
-        Fisher_Yates_Knuth1 exp = new Fisher_Yates_Knuth1(N, n, m);
+        ShuffleExp1 exp = new ShuffleExp1(N, n, m);
         exp.run();
     }
-
 }

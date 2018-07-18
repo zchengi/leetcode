@@ -1,4 +1,4 @@
-package Lexicographical_Order;
+package _003_Lexicographical_Order;
 
 import java.util.Arrays;
 

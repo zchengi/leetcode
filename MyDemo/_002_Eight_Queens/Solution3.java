@@ -1,4 +1,4 @@
-package Eight_Queens;
+package _002_Eight_Queens;
 
 
 /**

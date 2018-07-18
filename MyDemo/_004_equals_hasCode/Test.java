@@ -1,4 +1,4 @@
-package equals_hasCode;
+package _004_equals_hasCode;
 
 import java.util.HashMap;
 import java.util.Objects;

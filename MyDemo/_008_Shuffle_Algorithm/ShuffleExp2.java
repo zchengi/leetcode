@@ -1,15 +1,17 @@
-package Shuffle_Algorithm;
+package _008_Shuffle_Algorithm;
 
 /**
- * Fisher-Yates-Knuth 洗牌算法
+ * 洗牌算法实验
  * <p>
- * 随机性很强
- * 另一种实现：从后向前的寻找随机数
+ * 第二种：修改第一种的洗牌循环的结束条件， i < n -> i < m
+ * 洗牌结果比第一种更差，整体结果更加的有偏
+ * <p>
+ * 并不能保证等概率的生成结果之一，也就是并不能保证每一个位置最终有雷的概率的一半一半的
  *
  * @author cheng
- *         2018/4/22 13:15
+ *         2018/4/22 13:04
  */
-public class Fisher_Yates_Knuth2 {
+public class ShuffleExp2 {
 
     /**
      * 模拟次数
@@ -24,7 +26,7 @@ public class Fisher_Yates_Knuth2 {
      */
     private int m;
 
-    public Fisher_Yates_Knuth2(int N, int n, int m) {
+    public ShuffleExp2(int N, int n, int m) {
 
         if (N <= 0) {
             throw new IllegalArgumentException("N must be larger than 0!");
@@ -81,9 +83,8 @@ public class Fisher_Yates_Knuth2 {
 
     private void shuffle(int[] arr) {
 
-        for (int i = n - 1; i >= 0; i--) {
-            // 从 [0, i + 1) 区间里随机选择元素
-            int x = (int) (Math.random() * (i + 1));
+        for (int i = 0; i < m; i++) {
+            int x = (int) (Math.random() * n);
             swap(arr, i, x);
         }
     }
@@ -100,8 +101,7 @@ public class Fisher_Yates_Knuth2 {
         int n = 10;
         int m = 5;
 
-        Fisher_Yates_Knuth2 exp = new Fisher_Yates_Knuth2(N, n, m);
+        ShuffleExp2 exp = new ShuffleExp2(N, n, m);
         exp.run();
     }
-
 }

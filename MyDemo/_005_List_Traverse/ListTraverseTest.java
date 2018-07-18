@@ -1,4 +1,4 @@
-package TestForList;
+package _005_List_Traverse;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,7 +11,7 @@ import java.util.List;
  * @author cheng
  *         2018/5/30 11:32
  */
-public class ListTest {
+public class ListTraverseTest {
 
     private static void foreachTest(List<String> list) {
 
