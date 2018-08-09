@@ -10,7 +10,7 @@ import util.TreeNode;
  */
 public class Solution1 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-
+        // todo todo
         return null;
     }
 
