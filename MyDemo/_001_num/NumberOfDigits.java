@@ -1,4 +1,4 @@
-package num;
+package _001_num;
 
 /**
  * 按照最高位输出每一位数字
