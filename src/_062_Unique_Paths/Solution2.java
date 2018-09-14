@@ -2,6 +2,8 @@ package _062_Unique_Paths;
 
 /**
  * LeetCOde 062. Unique Paths
+ * <p>
+ * 分析：使用二维数组来实现。规律为除了第一行和第一列全为1外，其他格的路径数为其上一格和左一格的和。
  *
  * @author cheng
  *         2018/09/14 17:38
@@ -18,6 +20,7 @@ public class Solution2 {
             paths[0][i] = 1;
         }
 
+        // 这种解法是从 左下走到右上， 除了第一行和第一列全为1外，其他格的路径数为其下一格和左一格的和。
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
                 paths[i][j] = paths[i - 1][j] + paths[i][j - 1];
