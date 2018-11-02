@@ -20,6 +20,7 @@ public class Solution1 {
         }
 
         intervals.sort(Comparator.comparingInt(i2 -> i2.start));
+//        intervals.sort(Comparator.comparingInt((Interval interval) -> interval.start).reversed());
 
         List<Interval> res = new ArrayList<>();
 
