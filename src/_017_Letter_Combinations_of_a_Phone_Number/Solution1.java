@@ -9,7 +9,7 @@ import java.util.List;
  * @author cheng
  *         2018/09/03 11:23
  */
-public class Solution {
+public class Solution1 {
 
     public List<String> letterCombinations(String digits) {
 
@@ -35,6 +35,6 @@ public class Solution {
     public static void main(String[] args) {
 
         String digits = "23";
-        System.out.println(new Solution().letterCombinations(digits));
+        System.out.println(new Solution1().letterCombinations(digits));
     }
 }
