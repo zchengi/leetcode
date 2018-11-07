@@ -36,7 +36,7 @@ public class Solution {
             String str = ip.substring(index, index + i);
 
             // 从 0开始并且 str 长度大于一 或者 数字个数等于 3 并且该数字大于 256
-            boolean flag = (str.startsWith("0") && str.length() > 1) || (i == 3 && Integer.parseInt(str) > 255);
+            boolean flag = (str.startsWith("0") && i > 1) || (i == 3 && Integer.parseInt(str) > 255);
             if (flag) {
                 continue;
             }
