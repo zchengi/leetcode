@@ -29,16 +29,16 @@ public class Solution1 {
     }
 
     /**
-     * p 中保存了一个有 index-1 个元素的排列
-     * 向这个排列的末尾添加第 index 个元素，获得一个有 index 个元素的排列
+     * p 中保存了一个有 count-1 个元素的排列
+     * 向这个排列的末尾添加第 count 个元素，获得一个有 count 个元素的排列
      *
      * @param nums
-     * @param index
+     * @param count
      * @param p
      */
-    private void generatePermutation(int[] nums, int index, LinkedList<Integer> p) {
+    private void generatePermutation(int[] nums, int count, LinkedList<Integer> p) {
 
-        if (index == nums.length) {
+        if (count == nums.length) {
             res.add((List<Integer>) p.clone());
             return;
         }
@@ -48,7 +48,7 @@ public class Solution1 {
                 used[i] = true;
                 p.addLast(nums[i]);
 
-                generatePermutation(nums, index + 1, p);
+                generatePermutation(nums, count + 1, p);
 
                 used[i] = false;
                 p.removeLast();
