@@ -32,7 +32,7 @@ public class Solution2 {
 
         for (int level = 0; level < triangle.size(); level++) {
             List<Integer> currentRow = triangle.get(triangle.size() - level - 1);
-            for (int i = 0; i < triangle.get(triangle.size() - level - 1).size(); i++) {
+            for (int i = 0; i < currentRow.size(); i++) {
                 dp[i] = Math.min(dp[i], dp[i + 1]) + currentRow.get(i);
             }
         }
