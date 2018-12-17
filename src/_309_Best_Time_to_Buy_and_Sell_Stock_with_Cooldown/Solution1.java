@@ -1,4 +1,4 @@
-package _Best_Time_to_Buy_and_Sell_Stock_with_Cooldown;
+package _309_Best_Time_to_Buy_and_Sell_Stock_with_Cooldown;
 
 /**
  * LeetCode 309. Best Time to Buy and Sell Stock with Cooldown
