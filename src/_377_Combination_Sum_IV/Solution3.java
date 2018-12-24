@@ -9,8 +9,8 @@ package _377_Combination_Sum_IV;
 public class Solution3 {
     public int combinationSum4(int[] nums, int target) {
 
-
-        int[] dp = new int[target+1];
+        int[] dp = new int[target + 1];
+        // 如果 target 为0，则凑成情况只有一种
         dp[0] = 1;
 
         for (int i = 1; i < dp.length; i++) {
