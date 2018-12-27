@@ -18,10 +18,20 @@ public class Solution2 {
         for (int coin : coins) {
             for (int i = coin; i <= amount; i++) {
                 dp[i] += dp[i - coin];
+                printAmount(dp);
             }
+
+            System.out.println();
         }
 
         return dp[amount];
+    }
+
+    private static void printAmount(int[] arr) {
+        for (int coin : arr) {
+            System.out.print(coin+" ");
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
