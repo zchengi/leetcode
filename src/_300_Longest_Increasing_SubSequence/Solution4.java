@@ -33,7 +33,7 @@ public class Solution4 {
                 dp[len] = nums[i];
             } else {
                 // dp 数组是一个单调递增的数组，所有可以使用二分查找法
-                int index = lowerBound(dp, 0, len, nums[i]);
+                int index = lowerBound(dp, len, nums[i]);
                 if (dp[index] != nums[i]) {
                     dp[index] = Math.min(dp[index], nums[i]);
                 }
@@ -46,9 +46,9 @@ public class Solution4 {
     /**
      * lowerBound 求出 arr[l...r] 范围里，大于等于 target 的第一个元素所以在的索引
      */
-    private int lowerBound(int[] arr, int l, int r, int target) {
+    private int lowerBound(int[] arr, int r, int target) {
 
-        int left = l;
+        int left = 0;
         int right = r + 1;
 
         while (left != right) {
